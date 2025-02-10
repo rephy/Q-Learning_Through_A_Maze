@@ -3,7 +3,7 @@ import random
 
 class QLearning:
 
-    def __init__(self, shape=(81,4), learning_rate=0.85, discount=0.9, epsilon = 0.9):
+    def __init__(self, shape=(81,4), learning_rate=0.85, discount=0.9, epsilon = 0.95):
         assert 0 < learning_rate < 1, "Learning rate must be between 0 and 1, exclusive"
         assert 0 < discount < 1, "Discount factor must be between 0 and 1, exclusive"
 
@@ -34,4 +34,5 @@ class QLearning:
             if actions[i] == max_reward:
                 max_actions.append(i)
 
-        return random.choice(max_actions)
+        action = random.choice(max_actions)
+        return action
