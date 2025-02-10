@@ -55,13 +55,17 @@ def navigate(action):
     adj_state = get_adjacent_state(dx, dy)
 
     if adj_state is not None:
-        moves += adj_state
-
         bob.setheading(heading)
         for i in range(adj_state):
+            moves += 1
+
             bob.forward(50)
             t.update()
             sleep(reload_rate)
+
+            if moves == 200:
+                reset()
+                sleep(1)
 
         bob_px += dx * adj_state
         bob_py += dy * adj_state
@@ -142,7 +146,3 @@ while True:
     navigate(action)
 
     sleep(reload_rate)
-
-    if moves == 200:
-        reset()
-        sleep(1)
