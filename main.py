@@ -119,10 +119,6 @@ for y, row in enumerate(maze):
         safe_goto(c, -250 + x * 50, 250 - y * 50, False)
         if point == 1:
             draw_square(c, 50, False)
-        elif point == 2:
-            c.color("#ff0f0f")
-            draw_square(c, 50, False)
-            c.color("#000000")
         elif point == 3:
             c.color("#00bf63")
             draw_square(c, 50, False)
